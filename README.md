@@ -144,6 +144,4 @@ These are the resources on which I based to create my customized CSS reset file:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@roberto-j-rojas](https://www.frontendmentor.io/profile/roberto-j-rojas)
