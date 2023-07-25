@@ -1,0 +1,71 @@
+/*
+#############
+    RESET
+#############
+*/
+/* Global defaults */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    outline-color: transparent;
+    color: inherit;
+    font: inherit;
+}
+
+/* Core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Media defaults */
+img, picture, video, iframe, figure {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Anchor defaults*/
+a {
+    display: block;
+}
+
+p a {
+    display: inline;
+}
+
+/* List elements defaults */
+ul[role=list],
+ol[role=list] {
+    list-style: none;
+}
+
+/* Tables defaults */
+table, tr, td {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Font Defaults */
+h1, h2, h3, h4, h5, h6, p, span, strong, blockquote, i, b, u, em {
+    font-size: 1em;
+}
+
+/* Reduced Motion Settings */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+  

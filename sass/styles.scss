@@ -1,0 +1,196 @@
+@use 'mixins' as *;
+@use 'base';
+@use './_abstracts';
+/*
+
+
+
+###############
+UTILITY CLASSES
+###############
+*/
+.primary-heading, .secondary-heading{
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-700);
+}
+
+.primary-heading{
+    font-size: var(--fs-500);
+
+
+    @include area-above(40em, 50em){
+        /* The media query includes a min-height condition since the card height in the desktop layout is too much for some screens (like mine, which is 1366x768 px). So with this, the sizes of the mobile version will also be applied for screens with a height less than 50em (800px). */
+        font-size: var(--fs-600);
+    }
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+}
+/*
+
+
+
+##############
+GENERAL STYLES
+##############
+*/
+*{
+    outline-color: var(--clr-neutral-700);
+}
+
+body{
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-400);
+}
+
+main{
+    min-height: 100vh;
+    min-height: 100svh;
+}
+/*
+
+
+
+#############
+LAYOUT STYLES
+#############
+*/
+main{
+    justify-content: center;
+    background-color: var(--clr-primary-100);
+    background-image: url(../images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+
+    @include width-above(23.4em){
+        background-image: url(../images/pattern-background-desktop.svg);
+    }
+}
+
+.card{
+    background-color: var(--clr-neutral-100);
+    max-width: 22.5rem;
+    min-height: 35.5rem;
+    border-radius: var(--size-550);
+    overflow: hidden;
+    margin: var(--size-550);
+
+    @include area-above(40em, 50em){
+        max-width: 28.125rem;
+        min-height: 43.75rem;
+    }
+
+    &__img-container{
+        height: 10rem;
+
+        @include area-above(40em, 50em){
+            height: 13.75rem;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content{
+        min-height: 25.5rem;
+        padding: var(--size-200) var(--size-550) var(--size-100);
+        
+        @include area-above(40em, 50em){
+            min-height: 30rem;
+            padding: var(--size-600) var(--size-850) var(--size-100);
+        }
+    }
+}
+
+.content{
+    text-align: center;
+
+    &__section{
+        margin-block: var(--size-550);
+        padding-inline: var(--size-400);
+        border-radius: var(--size-200);
+
+        @include area-above(40em, 50em){
+            padding-inline: var(--size-550);
+        }
+
+        h1{
+            margin-bottom: var(--size-550);
+            padding: 0;
+        }
+    }
+}
+
+.plan-details{
+    background-color: var(--clr-neutral-200);
+    padding-block: var(--size-400);
+    justify-content: space-between;
+    font-size: var(--fs-300);
+
+    @include area-above(40em, 50em){
+        margin-bottom: var(--size-650);
+        padding-block: var(--size-550);
+        font-size: var(--size-400);
+    }
+
+    &__icon{
+        width: var(--size-850);
+        margin-right: var(--size-500);
+    }
+
+    &__info{
+        h2{
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    &__link{
+        font-size: var(--fs-200);
+        font-weight: var(--fw-bold);
+        color: var(--clr-primary-400);
+
+        @include hover{
+            color: var(--clr-secondary-400);
+            text-decoration: none;
+        }
+    }
+}
+
+.button, .button--2{
+    display: block;
+    width: 100%;
+    height: var(--size-850);
+    margin-block: var(--size-100);
+    border-radius: var(--size-100);
+    font-size: var(--fs-350);
+    font-weight: var(--fw-semi-bold);
+    cursor: pointer;
+
+    @include area-above(40em, 50em){
+        margin-block: var(--size-400);
+    }
+}
+
+.button{
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    box-shadow: 0 var(--size-200) var(--size-500) 0.5rem var(--clr-neutral-300);
+
+    @include hover{
+        background-color: var(--clr-secondary-400);
+    }
+}
+
+.button--2{
+    background: transparent;
+    font-weight: var(--fw-bold);
+
+    @include hover{
+        color: var(--clr-neutral-700);
+    }
+}
