@@ -1,0 +1,27 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'sizes' as *;
+@use '../mixins' as *;
+
+/*
+
+
+
+#############
+GLOBAL STYLES
+#############
+*/
+:root{
+    // COLORS
+    @include createVarSection-nested($colors, clr, "COLOR VARIABLES");
+    /*
+
+    FONT VARIABLES 
+    */
+    @include createVarSection($font-families, ff, "Font families", true, $quotes:true);
+    @include createVarSection($font-sizes, fs, "Font sizes", true, $remSizesType:true);
+    @include createVarSection($font-weight, fw, "Font weights", true);
+
+    // SIZES
+    @include createVarSection($rem-sizes, size, "SIZE VARIABLES", $remSizesType:true);
+}
